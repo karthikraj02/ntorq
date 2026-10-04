@@ -1,0 +1,17 @@
+# Optional: a local MongoDB for development.  Start it with:  npm run mongo:up
+#
+# Bound to 127.0.0.1 only and without authentication, so it is for development on
+# your own computer. For anything reachable from the internet use MongoDB Atlas
+# (or enable authentication) and put real credentials only in server/.env.
+services:
+  mongo:
+    image: mongo:8
+    container_name: ntorq-mongo
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:${MONGO_PORT:-27017}:27017'
+    volumes:
+      - ntorq-mongo-data:/data/db
+
+volumes:
+  ntorq-mongo-data:

@@ -1,0 +1,25 @@
+{
+  "name": "ntorq-companion",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Ntorq Companion - a personal companion app for the TVS Ntorq 125 Race XP (React Native app + Express/MongoDB API)",
+  "engines": {
+    "node": ">=22.11.0"
+  },
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix mobile install",
+    "server:dev": "npm --prefix server run dev",
+    "server:dev:memory": "npm --prefix server run dev:memory",
+    "server:build": "npm --prefix server run build",
+    "server:start": "npm --prefix server run start",
+    "mobile:start": "npm --prefix mobile start",
+    "mobile:android": "npm --prefix mobile run android",
+    "mobile:apk": "npm --prefix mobile run build:apk",
+    "adb:reverse": "adb reverse tcp:5000 tcp:5000 && adb reverse tcp:8081 tcp:8081",
+    "mongo:up": "docker compose up -d mongo",
+    "mongo:down": "docker compose down",
+    "typecheck": "npm --prefix server run typecheck && npm --prefix mobile run typecheck",
+    "lint": "npm --prefix server run lint && npm --prefix mobile run lint",
+    "test": "npm --prefix server test && npm --prefix mobile test"
+  }
+}

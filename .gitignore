@@ -1,0 +1,22 @@
+# Dependencies and build output
+node_modules/
+dist/
+coverage/
+*.log
+
+# Secrets - never commit
+.env
+.env.*
+!.env.example
+*.keystore
+!debug.keystore
+*.jks
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local bundle checks
+mobile/.bundle-check/
